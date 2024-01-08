@@ -1,0 +1,71 @@
+/* first we reset margin and padding for whole page */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* In this block, 
+    first we set the height and width to be equal to the whole page,
+    for responsiveness, we set the height = 100 vh.
+    second we set background color.
+    Finally, we used flex to place our elements and their content in the center of the page */
+#root{
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(155, 231, 241); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* In this block,
+    first define a board with a black and faded border.
+    set the color inside this board to white.
+    Using border-radius, curved shape around the board.
+    using padding and flex.
+    We use flex-wrap so that the elements move down as the screen shrinks. */
+#card{
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    background-color: white;
+    border-radius: 30px;
+    padding: 10px;
+    padding-bottom: 60px;
+    padding-right: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+/* set margin 15px between text and border box  */
+#content{
+    margin: 15px;
+}
+/* set margin 15px between text and border box  */
+#answer{
+    margin: 15px;
+}
+/* In this block,
+     we define the second part of conten as inline-block
+     so that it can be placed next to the form. 
+     We also set the size and font for it */
+#resulteCash{
+    padding: 10px;
+    display: inline-block;
+    width: 150px;
+    font-weight: bold;
+    font-size: large;
+    border: 1px dashed black;
+}
+/* set margin top 10px*/
+.mt{
+    margin-top: 10px;
+}
+/*  we set coordinates of clear grid resulte cash*/
+.gridBtnClear{
+    position: relative;
+}
+/*  we set coordinates of clear bottom */
+.btnClear{
+    position: absolute;
+    bottom: 5px;
+    left: 3px;
+}

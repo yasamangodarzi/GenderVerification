@@ -5,7 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GenderVerification</title>
 </head>
+
 <body>
-    <h1>say hello</h1>
+    <div id="root">
+        <div id="card">
+            <div id="content">
+                <form id="formSubmitName">
+                    <h3>
+                        Mr. or Ms. ?
+                    </h3>
+                    <div>
+                        <span>
+                            Name
+                        </span>
+                        <input type="text" id="userName" />
+                    </div>
+                    <div >
+                       <input type="radio" id="Male" name="gender" value="Male">
+                       <label for="Male">Male</label><br>
+                       <input type="radio" id="female" name="gender" value="female">
+                       <label for="female">female</label><br>
+                    </div>
+                    <div >
+                        <div>
+                            <input type="submit" value="Submit">
+                        </div>
+                        <div >
+                            <button type="button">
+                                Save
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div id="answer">
+                <h3 >
+                    Predoction
+                </h3>
+                <div >
+                    <p id="name">
+                     
+                    </p>
+                    <p id="probability">
+                     
+                    </p>
+                </div>
+                <div id="gridBtnClear">
+                    <textarea class="resulteCash" name="resulteCash" rows="4" cols="25"></textarea>
+                    <br>
+                    <input type="submit" value="clear" class="btnClear">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./index.js"></script>
 </body>
+
 </html>

@@ -13,15 +13,22 @@ form.addEventListener("submit", async (event) => {
     document.getElementsByClassName("resulteCash")[0].value =''
 
     if (userName.value.length > 255) {
-        alert('اسم کاربر طولانی است')
+        showError(
+            'flex',
+             'اسم کاربر طولانی است'
+            )
         return
     }
 
     let name = userName.value;
 
     if (!regx_char.test(name)) {
-        alert('لطفا تنها از حروف انگلیسی استفاده کنید')
+        showError(
+            'flex',
+            'لطفا تنها از حروف انگلیسی استفاده کنید'
+            )
         return
+       
     }
 
     let storedUserName = localStorage.getItem(name);
@@ -38,7 +45,10 @@ form.addEventListener("submit", async (event) => {
         fetch(urlApi)
         .then(response => {
             if (!response?.ok) {
-                alert('Network response was not ok');
+                showError(
+                    'flex',
+                     'اسم کاربر موجود نیست'
+                    );
             }
             return response.json();
           })
@@ -51,7 +61,10 @@ form.addEventListener("submit", async (event) => {
           })
  
     } catch {
-        alert('error server')
+        showError(
+            'flex',
+             'ارتباط با سرور ممکن نیست'
+            );
     }
 }
 
@@ -85,4 +98,13 @@ const clearCash =() =>{
     document.getElementsByClassName("resulteCash")[0].value =''
     document.getElementById("gender").innerHTML =''
     document.getElementById("probability").innerHTML =''
+}
+// we define error handler
+function showError(display , textError){
+    let elem  = document.getElementById('alertError')
+    let elemText  = document.getElementById('textError')
+
+     elem.style.display = display
+     elemText.innerHTML = textError ? textError : ''
+
 }
